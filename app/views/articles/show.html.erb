@@ -1,0 +1,30 @@
+
+ <div class="d-flex justify-content-center vh-100 m-1">
+<div class="text-center">
+
+<p class="fs-2 text-white"> <%= @article.title %> 📝 </p>
+<p class="fs-3"> <%= @article.content %> </p>
+<p class="fs-2"> <%= @article.title %> </p>
+
+<p class="fs-3"> <%= @article.content %> </p><button type="button" class="btn btn-light text-dark">
+<%= link_to "Delete 👎",
+  article_path(@article),
+  data: {turbo_method: :delete, turbo_confirm: "please dont leave me"},
+  style: "text-decoration: none;"
+
+%>
+</button>
+
+<button type="button" class="btn btn-light text-dark">
+
+<%= link_to "edit 🍌",
+  edit_article_path(@article), style: "text-decoration: none;"
+%>
+
+</button>
+<button type="button" class="btn btn-light text-dark">
+<%= link_to '🔙', articles_path %>
+</button>
+
+</div>
+</div>
